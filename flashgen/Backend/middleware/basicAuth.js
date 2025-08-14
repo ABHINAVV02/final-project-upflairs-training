@@ -13,13 +13,13 @@ module.exports = function basicAuth(req, res, next) {
     .toString("ascii");
   const [username, password] = credentials.split(":");
 
-  // Env-admin option
+ 
   if (username === process.env.BASIC_USER && password === process.env.BASIC_PASS) {
     req.user = { id: "env-admin", username };
     return next();
   }
 
-  // Match a real user from users.json
+  
   const foundUser = users.find(
     u => u.email === username && u.password === password
   );

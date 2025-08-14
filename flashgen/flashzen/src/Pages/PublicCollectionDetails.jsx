@@ -13,11 +13,11 @@ export default function PublicCollectionDetails() {
   const [collection, setCollection] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Bookmark state
+
   const [bookmarkCollectionId, setBookmarkCollectionId] = useState(null);
   const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
 
-  // Load collection
+
   useEffect(() => {
     getPublicCollectionDetails(id)
       .then(data => {
@@ -30,7 +30,7 @@ export default function PublicCollectionDetails() {
       });
   }, [id]);
 
-  // If logged in → find/create bookmarked flashcards collection
+
   useEffect(() => {
     async function initBookmarkCollection() {
       if (!authToken) return;
@@ -76,7 +76,7 @@ export default function PublicCollectionDetails() {
 
   return (
     <div className="container mt-5">
-      {/* Back button at top */}
+ 
       <button
         className="btn btn-link px-0 mb-3"
         onClick={() => navigate("/explore")}
@@ -84,7 +84,7 @@ export default function PublicCollectionDetails() {
         ← Back to Explore
       </button>
 
-      {/* Collection info */}
+
       <h2>{collection.title}</h2>
       <p className="text-muted">{collection.description}</p>
       {collection.subject && <p><strong>Subject:</strong> {collection.subject}</p>}
@@ -92,7 +92,7 @@ export default function PublicCollectionDetails() {
         <p><strong>Topics:</strong> {collection.topics.join(", ")}</p>
       )}
 
-      {/* Flashcards header + Study Mode icon */}
+
       <div className="d-flex justify-content-between align-items-center mt-4 mb-3">
         <h4 className="mb-0">Flashcards</h4>
         <Link
@@ -105,7 +105,6 @@ export default function PublicCollectionDetails() {
 
       </div>
 
-      {/* Flashcards grid */}
       <div className="row g-3">
         {collection.cards && collection.cards.length > 0 ? (
           collection.cards.map(fc => (
@@ -114,7 +113,6 @@ export default function PublicCollectionDetails() {
                 <div className="card-body d-flex flex-column justify-content-between">
                   <div><h6>{fc.question}</h6><p className="text-muted">{fc.answer}</p></div>
 
-                  {/* Bookmark icon if logged in */}
                   {user && (
                     <div className="mt-2 d-flex justify-content-end">
                       <button

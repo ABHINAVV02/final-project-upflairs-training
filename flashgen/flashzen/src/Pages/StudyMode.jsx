@@ -9,7 +9,7 @@ export default function StudyMode({ readOnly = false }) {
   const navigate = useNavigate();
   const { authToken } = useAuth();
 
-  // Initial state if passed via navigation
+
   const stateCollection = location.state?.collection;
   const stateCards = location.state?.flashcards;
 
@@ -19,7 +19,7 @@ export default function StudyMode({ readOnly = false }) {
   const [index, setIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
 
-  // Load from backend if we don't have in location.state
+
   useEffect(() => {
     async function loadData() {
       try {
@@ -42,7 +42,7 @@ export default function StudyMode({ readOnly = false }) {
     loadData();
   }, [id, authToken, readOnly]);
 
-  // Safety: Reset index on card change
+
   useEffect(() => {
     setIndex(0);
     setShowAnswer(false);

@@ -25,14 +25,14 @@ export default function Register() {
     }
 
     try {
-      // 1️⃣ Call backend to create the new user
+  
       const res = await registerUser(name.trim(), email.trim(), password);
       if (!res.success) {
         setError(res.message || "Registration failed.");
         return;
       }
 
-      // 2️⃣ Auto-login after successful registration
+    
       const loginResult = await login(email, password);
       if (loginResult.success) {
         navigate("/profile");

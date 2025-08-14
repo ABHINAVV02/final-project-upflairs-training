@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const basicAuth = require("./middleware/basicAuth");
 
-// ===== File path setup =====
+
 const dataDir = path.join(__dirname, "data");
 const collectionsFile = path.join(dataDir, "collections.json");
 const flashcardsFile = path.join(dataDir, "flashcards.json");
@@ -15,7 +15,6 @@ let collections = require(collectionsFile);
 let flashcards = require(flashcardsFile);
 let users = require(usersFile);
 
-// Save helpers
 const saveCollections = () => fs.writeFileSync(collectionsFile, JSON.stringify(collections, null, 2));
 const saveFlashcards = () => fs.writeFileSync(flashcardsFile, JSON.stringify(flashcards, null, 2));
 const saveUsers = () => fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
@@ -24,7 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ===== User Routes =====
+
 app.post("/api/users/register", (req, res) => {
   const { name, email, password } = req.body;
   if (users.find(u => u.email === email)) {
@@ -36,7 +35,7 @@ app.post("/api/users/register", (req, res) => {
   res.status(201).json({ message: "User registered", user: { name, email } });
 });
 
-// ===== Collections Routes =====
+
 app.get("/api/collections/public", (req, res) => {
   res.json(collections);
 });
@@ -70,7 +69,7 @@ app.post("/api/collections", basicAuth, (req, res) => {
     description,
     subject,
     topics,
-    userId: req.user.id // ✅ link to user for stats
+    userId: req.user.id
   };
   collections.push(newCollection);
   saveCollections();
@@ -99,7 +98,7 @@ app.delete("/api/collections/:id", basicAuth, (req, res) => {
   res.json({ message: "Collection deleted" });
 });
 
-// ===== Flashcards Routes =====
+
 app.get("/api/collections/:id/cards", (req, res) => {
   const list = flashcards.filter(fc => fc.collectionId === req.params.id);
   res.json(list);
@@ -134,7 +133,7 @@ app.delete("/api/cards/:cardId", basicAuth, (req, res) => {
   res.json({ message: "Flashcard deleted" });
 });
 
-// ===== User Stats =====
+
 app.get("/api/user/stats", basicAuth, (req, res) => {
   try {
     const userId = req.user.id;
@@ -145,7 +144,7 @@ app.get("/api/user/stats", basicAuth, (req, res) => {
     const totalFlashcards = flashcards.filter(fc =>
       userCollections.some(c => c.id === fc.collectionId)
     ).length;
-    const studySessions = 0; // placeholder until implemented
+    const studySessions = 0; 
     const publicCollections = userCollections.filter(c => c.isPublic).length;
 
     res.json({ totalCollections, totalFlashcards, studySessions, publicCollections });

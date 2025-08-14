@@ -14,7 +14,7 @@ export default function CollectionDetails() {
   const [collection, setCollection] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Flashcard form/modal state
+
   const [form, setForm] = useState({
     id: null,
     question: "",
@@ -140,7 +140,6 @@ export default function CollectionDetails() {
       {collection.subject && <p><strong>Subject:</strong> {collection.subject}</p>}
       {collection.topics?.length > 0 && <p><strong>Topics:</strong> {collection.topics.join(", ")}</p>}
 
-      {/* Study + Add Buttons */}
       <div className="d-flex justify-content-between align-items-center mt-4 mb-3">
         <h4 className="mb-0">Flashcards</h4>
         <div className="d-flex gap-2">
@@ -171,7 +170,6 @@ export default function CollectionDetails() {
         <p className="text-center text-muted">No flashcards yet. Add some above.</p>
       )}
 
-      {/* Flashcards Grid */}
       <div className="row row-cols-1 row-cols-md-3 g-3">
         {collection.cards?.map(fc => (
           <div key={fc.id} className="col">
@@ -199,7 +197,6 @@ export default function CollectionDetails() {
         ))}
       </div>
 
-      {/* Add/Edit Modal */}
       <Modal show={showModal} onHide={() => { setShowModal(false); resetForm(); setIsEditing(false); }} centered>
         <Modal.Header closeButton>
           <Modal.Title>{isEditing ? "Edit Flashcard" : "Add New Flashcard"}</Modal.Title>

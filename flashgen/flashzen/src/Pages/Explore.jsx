@@ -60,7 +60,7 @@ export default function Explore() {
                     <p className="text-muted">{col.description}</p>
                     
                     <div className="mt-auto d-flex gap-2">
-                      {/* View Button */}
+                      
                       <Link
                         to={`/explore/${col.id || col._id}`}
                         className="btn btn-outline-primary btn-sm flex-fill"
@@ -69,7 +69,7 @@ export default function Explore() {
                         <span className="lnr lnr-eye"></span>
                       </Link>
 
-                      {/* Save/Clone Button */}
+                  
                       <button
                         className="btn btn-outline-warning btn-sm flex-fill"
                         title="Save to My Collections"

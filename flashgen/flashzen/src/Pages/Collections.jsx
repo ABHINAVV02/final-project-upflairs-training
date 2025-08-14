@@ -190,7 +190,7 @@ export default function Collections() {
 
       </ul>
 
-      {/* Modal for Add/Edit */}
+
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>{isEditing ? "Edit Collection" : "Add New Collection"}</Modal.Title>

@@ -8,7 +8,6 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
-  // Close dropdown when clicking outside
   const dropdownRef = useRef();
 
   useEffect(() => {

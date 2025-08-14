@@ -31,7 +31,7 @@ export default function Profile() {
 
   return (
     <div className="container my-5" style={{ maxWidth: "900px" }}>
-      {/* Profile Header: image left, info right */}
+     
       <div
         className="card shadow-sm p-4 mb-4 rounded d-flex align-items-center"
         style={{
@@ -59,7 +59,6 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Stats (all 4 cards) */}
       <h5 className="mb-3 mt-4 fw-bold">Your Stats</h5>
       {loading ? (
         <p>Loading stats...</p>
@@ -94,26 +93,25 @@ export default function Profile() {
         <p>No stats available yet.</p>
       )}
 
-      {/* Quick Actions */}
       <h5 className="mb-3 mt-4 fw-bold">Quick Actions</h5>
       <div className="list-group rounded shadow-sm">
         <Link
           to="/collections"
           className="list-group-item list-group-item-action"
         >
-          📂 My Collections
+          My Collections
         </Link>
         <Link
           to="/explore"
           className="list-group-item list-group-item-action"
         >
-          🌎 Explore Public Collections
+          Explore Public Collections
         </Link>
         <Link
           to="/collections/new"
           className="list-group-item list-group-item-action"
         >
-          ➕ Create New Collection
+          Create New Collection
         </Link>
       </div>
     </div>

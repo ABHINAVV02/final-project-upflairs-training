@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Restore from localStorage
+  
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const storedUser = localStorage.getItem("authUser");
@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     setLoading(false);
   }, []);
 
-  // Login function
+  
   const login = async (email, password) => {
     const result = await loginUser(email, password);
     if (result.ok) {
