@@ -1,0 +1,73 @@
+[
+  {
+    "id": "1",
+    "title": "Biology Basics",
+    "description": "Fundamental biology term.",
+    "subject": "Biology",
+    "topics": [
+      "Cells",
+      "Genetics",
+      "Organisms"
+    ],
+    "userId": "1"
+  },
+  {
+    "id": "2",
+    "title": "World History",
+    "description": "Key events and facts from world history.",
+    "subject": "History",
+    "topics": [
+      "Ancient",
+      "Modern",
+      "Wars"
+    ],
+    "userId": "1"
+  },
+  {
+    "id": "3",
+    "title": "Algebra Essentials",
+    "description": "Core math concepts in algebra.",
+    "subject": "Math",
+    "topics": [
+      "Equations",
+      "Functions"
+    ],
+    "userId": "1"
+  },
+  {
+    "id": "4",
+    "title": "General Science",
+    "description": "A mix of scientific concepts.",
+    "subject": "Science",
+    "topics": [
+      "Physics",
+      "Chemistry",
+      "Biology"
+    ],
+    "userId": "1"
+  },
+  {
+    "id": "1754917693366",
+    "title": "Bookmarked Flashcards",
+    "description": "My saved/bookmarked cards",
+    "subject": "",
+    "topics": [],
+    "userId": "1"
+  },
+  {
+    "id": "1754926130142",
+    "title": "darkfalcon",
+    "description": "it is a test collection",
+    "subject": "none",
+    "topics": [],
+    "userId": "1754926025484"
+  },
+  {
+    "id": "1754926686436",
+    "title": "Bookmarked Flashcards",
+    "description": "My saved/bookmarked cards",
+    "subject": "",
+    "topics": [],
+    "userId": "1754926025484"
+  }
+]
