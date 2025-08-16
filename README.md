@@ -76,27 +76,6 @@ The application will be accessible in your browser at:
 
 ---
 
-### Backend Setup
-
-1. Open a new terminal window/tab and navigate to the frontend directory:
-
-   ```
-   cd Backend
-   ```
-
-2. Install dependencies:
-
-   ```
-   npm install
-   ```
-
-3. Start the frontend development server:
-   ```
-   npm run dev
-   ```
-
----
-
 ## Notes
 
 - Since the backend uses **local JSON files**, changes to flashcards or collections are stored locally.  
